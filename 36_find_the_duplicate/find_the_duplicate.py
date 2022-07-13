@@ -13,3 +13,10 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    singles = set(nums)
+    for num in singles:
+        if num in nums:
+            nums.pop(nums.index(num))
+    print(nums)
+    if nums != []:
+        return nums[0]
